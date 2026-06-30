@@ -11,7 +11,16 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'Inter',sans-serif;background:#fff;color:#0D1B2A;-webkit-font-smoothing:antialiased}
-:root{--navy:#0D1B2A;--teal:#2E6E8E;--white:#FFFFFF;--lgray:#F4F6F8;--mgray:#8A9BB0;--border:#E8EDF2;--text-body:#4A5568;--text-muted:#6B7A8D;}
+:root{
+  --navy:#0D1B2A;
+  --teal:#2E6E8E;
+  --white:#FFFFFF;
+  --lgray:#F4F6F8;
+  --mgray:#8A9BB0;
+  --border:#E8EDF2;
+  --text-body:#4A5568;
+  --text-muted:#6B7A8D;
+}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;background:transparent;transition:background 0.4s ease,backdrop-filter 0.4s ease;}
 nav.scrolled{background:rgba(13,27,42,0.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
 .nav-logo img{height:38px;display:block}
@@ -32,7 +41,7 @@ nav.scrolled{background:rgba(13,27,42,0.96);backdrop-filter:blur(12px);-webkit-b
 .nav-overlay a:hover{color:#fff}
 .nav-overlay-close{position:absolute;top:28px;right:32px;font-size:28px;color:#fff;cursor:pointer;background:none;border:none;line-height:1;}
 #hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;}
+.hero-bg{position:absolute;inset:0;background-image:url('images/hero.jpg');background-size:cover;background-position:center 40%;background-repeat:no-repeat;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,27,42,0.1) 0%,rgba(13,27,42,0.3) 40%,rgba(13,27,42,0.85) 100%);}
 .hero-content{position:relative;z-index:2;padding:0 80px 80px;max-width:900px;}
 .hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:20px;}
@@ -217,6 +226,7 @@ footer{background:var(--navy);padding:64px 0}
   <a href="#tools" onclick="closeMenu()">Tools</a>
   <a href="#careers" onclick="closeMenu()">Careers</a>
 </div>
+
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg" id="hero-bg"></div>
@@ -229,6 +239,7 @@ footer{background:var(--navy);padding:64px 0}
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
   </div>
 </section>
+
 <!-- TRUST BAR -->
 <section id="trust">
   <div class="trust-inner">
@@ -246,6 +257,7 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="about-inner">
@@ -275,6 +287,7 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
+
 <!-- SERVICES -->
 <section id="services">
   <div class="services-inner">
@@ -318,6 +331,7 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
+
 <!-- NURSING -->
 <section id="nursing">
   <div class="nursing-inner">
@@ -350,6 +364,7 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
+
 <!-- STANDARDS -->
 <section id="standards">
   <div class="standards-watermark">100+</div>
@@ -370,6 +385,7 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
+
 <!-- ESOP -->
 <section id="esop">
   <div class="esop-inner">
@@ -398,7 +414,8 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
-<!-- B-CORP -->
+
+<!-- BCORP -->
 <section id="bcorp">
   <div class="bcorp-inner">
     <div class="bcorp-left">
@@ -429,6 +446,7 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
+
 <!-- TEAM -->
 <section id="team">
   <div class="team-inner">
@@ -459,6 +477,7 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
+
 <!-- TOOLS -->
 <section id="tools">
   <div class="tools-inner">
@@ -484,6 +503,7 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
+
 <!-- LINKEDIN -->
 <section id="linkedin">
   <div class="linkedin-inner">
@@ -497,6 +517,7 @@ footer{background:var(--navy);padding:64px 0}
     </a>
   </div>
 </section>
+
 <!-- CAREERS -->
 <section id="careers">
   <div class="careers-inner">
@@ -517,6 +538,7 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -531,13 +553,17 @@ footer{background:var(--navy);padding:64px 0}
     </div>
   </div>
 </footer>
+
 <script>
+// NAV scroll
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 });
 function openMenu() { document.getElementById('nav-overlay').classList.add('open'); }
 function closeMenu() { document.getElementById('nav-overlay').classList.remove('open'); }
+
+// HERO headline
 const words = ['Twenty','Years','Building','the','Standards','That','Run','Federal','Health.'];
 const hl = document.getElementById('hero-headline');
 words.forEach((w,i) => {
@@ -548,11 +574,17 @@ words.forEach((w,i) => {
   hl.appendChild(span);
 });
 setTimeout(() => hl.querySelectorAll('.word').forEach(s => s.classList.add('visible')), 100);
-document.getElementById('hero-bg').style.backgroundImage = "url('images/hero.jpg')";
+
+// Hero background image is now set via CSS (images/hero.jpg)
+// document.getElementById('hero-bg').style.backgroundImage = "url('https://www.lantanagroup.com/wp-content/uploads/2023/01/Lantana-Group-Photo.jpg')";
+
+// REVEAL
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// COUNTERS
 function animateCount(el) {
   const target = parseInt(el.dataset.count);
   const suffix = el.dataset.suffix || '';
